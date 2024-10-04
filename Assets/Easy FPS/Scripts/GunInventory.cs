@@ -54,6 +54,38 @@ public class GunInventory : MonoBehaviour {
 		}
 
 	}
+	void OnGUI() {
+    // Check if there are any guns in the inventory
+    if (gunsIHave.Count > 0) {
+        // Iterate through each gun in the inventory
+        for (int i = 0; i < gunsIHave.Count; i++) {
+            // Calculate the size of the icon
+            float iconSizeX = size_x(size.x);
+            float iconSizeY = size_y(size.y);
+            // Calculate the position for each icon
+            float posX = position_x(beginPosition.x) + (i * (iconSizeX + spacing));
+            float posY = position_y(beginPosition.y);
+
+            // Check the menu style to determine layout
+            if (menuStyle == MenuStyle.horizontal) {
+                // Highlight the current gun icon
+                if (i == currentGunCounter) {
+                    GUI.DrawTexture(new Rect(posX, posY, iconSizeX * 1.2f, iconSizeY * 1.2f), icons[i]);
+                } else {
+                    GUI.DrawTexture(new Rect(posX, posY, iconSizeX, iconSizeY), icons[i]);
+                }
+            } else if (menuStyle == MenuStyle.vertical) {
+                posY += i * (iconSizeY + spacing); // Adjust Y for vertical layout
+                // Highlight the current gun icon
+                if (i == currentGunCounter) {
+                    GUI.DrawTexture(new Rect(posX, posY, iconSizeX * 1.2f, iconSizeY * 1.2f), icons[i]);
+                } else {
+                    GUI.DrawTexture(new Rect(posX, posY, iconSizeX, iconSizeY), icons[i]);
+                }
+            }
+        }
+    }
+}
 
 
 	/*

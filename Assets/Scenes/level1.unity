@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 1006919916}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: LevelPart
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 1249161683}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -930,7 +930,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 1275081102}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: LevelPart
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 1396912239}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: LevelPart
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 2031135364}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: LevelPart
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1605,7 +1605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3956073104443899705, guid: a60792ecf452a4d6c98b59d07d060215, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.23
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 3956073104443899705, guid: a60792ecf452a4d6c98b59d07d060215, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1637,6 +1637,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3956073104443899705, guid: a60792ecf452a4d6c98b59d07d060215, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425699567682352626, guid: a60792ecf452a4d6c98b59d07d060215, type: 3}
+      propertyPath: grounded
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

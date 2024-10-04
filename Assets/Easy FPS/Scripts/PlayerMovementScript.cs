@@ -159,23 +159,22 @@ public class PlayerMovementScript : MonoBehaviour {
 	* Raycasts down to check if we are grounded along the gorunded method() because if the
 	* floor is curvy it will go ON/OFF constatly this assures us if we are really grounded
 	*/
-	private bool RayCastGrounded(){
-		RaycastHit groundedInfo;
-		if(Physics.Raycast(transform.position, transform.up *-1f, out groundedInfo, 1, ~ignoreLayer)){
-			Debug.DrawRay (transform.position, transform.up * -1f, Color.red, 0.0f);
-			if(groundedInfo.transform != null){
-				//print ("vracam true");
-				return true;
-			}
-			else{
-				//print ("vracam false");
-				return false;
-			}
-		}
-		//print ("nisam if dosao");
+/*
+* Raycasts down to check if we are grounded using the Ground tag.
+*/
+private bool RayCastGrounded(){
+    RaycastHit groundedInfo;
+    if(Physics.Raycast(transform.position, Vector3.down, out groundedInfo, 1, ~ignoreLayer)){
+        Debug.DrawRay(transform.position, Vector3.down, Color.red, 0.0f);
+        
+        // Check if the raycast hit an object with the "Ground" tag
+        if(groundedInfo.transform.CompareTag("Ground")){
+            return true;
+        }
+    }
+    return false;
+}
 
-		return false;
-	}
 
 	/*
 	* If player toggle the crouch it will scale the player to appear that is crouching
